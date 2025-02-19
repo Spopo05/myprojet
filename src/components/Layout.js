@@ -4,12 +4,14 @@ import { logoutUser, updateColor } from "../redux/actions";
 import { Link, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import logo from "../assets/lion1.png"; 
+import { getTextColor } from '../utils/colorUtils'; 
+
 
 const Layout = ({ children }) => {
   const user = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [footerColor, setFooterColor] = useState(user.couleur || 'maroon');
+  const [selectedColor, setSelectedColor] = useState(user.couleur || 'maroon');
 
   // Handle logout functionality
   const handleLogout = () => {
@@ -21,14 +23,14 @@ const Layout = ({ children }) => {
   // Sync color with Redux state
   useEffect(() => {
     if (user.couleur) {
-      setFooterColor(user.couleur);
+      setSelectedColor(user.couleur);
     }
   }, [user.couleur]);
 
-  const handleColorChange = (e) => {
+  const handleColorChange = async (e) => {
     const newColor = e.target.value;
-    setFooterColor(newColor);
-    dispatch(updateColor(newColor));
+    setSelectedColor(newColor);
+
   };
   return (
     <div>
@@ -39,7 +41,7 @@ const Layout = ({ children }) => {
                 <Link to="/changeColor">Edit color</Link>
                 {user.admin && (<Link to="/admin">Admin Page</Link>)}
             </nav>
-        <button className='deconn' onClick={handleLogout} style={{ backgroundColor: user.couleur }}>Se Déconnecter</button>
+        <button className='deconn' onClick={handleLogout} style={{ backgroundColor: user.couleur , color: getTextColor(selectedColor)}}>Log Out</button>
       </header>
       
       <main> 
@@ -47,7 +49,7 @@ const Layout = ({ children }) => {
             <Outlet /> 
       </main>
       <footer className="footer" style={{ backgroundColor: user.couleur }}>
-      <div className="footer-content">
+      <div className="footer-content" style={{color: getTextColor(selectedColor)}}>
         <div className="footer-left">
           <h3>Company</h3>
           <p>About Us</p>
@@ -57,7 +59,7 @@ const Layout = ({ children }) => {
           <p>Terms of Service</p>
         </div>
 
-        <div className="footer-center">
+        <div className="footer-center" style={{color: getTextColor(selectedColor)}}>
           <h3>Quick Links</h3>
           <p>Blog</p>
           <p>FAQ</p>
@@ -65,7 +67,7 @@ const Layout = ({ children }) => {
           <p>Community</p>
         </div>
 
-        <div className="footer-right">
+        <div className="footer-right" style={{color: getTextColor(selectedColor)}}>
           <h3>Contact</h3>
           <p>📍 Address: 123 Main St</p>
           <p>📞 Phone: (123) 456-7890</p>
@@ -73,7 +75,7 @@ const Layout = ({ children }) => {
         </div>
       </div>
 
-      <div className="footer-social">
+      <div className="footer-social" style={{color: getTextColor(selectedColor)}}>
           <a href="https://facebook.com" className="social-link" aria-label="Facebook">
             <i className="fab fa-facebook-f"></i> {/* Facebook icon */}
           </a>

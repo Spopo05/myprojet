@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { loginUser } from '../../redux/actions';
-import { getTextColor } from '../../utils/colorUtils'; 
+import { getTextColor } from '../../utils/colorUtils';
 
 const ChangeColor = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state);
   const [selectedColor, setSelectedColor] = useState(user.couleur || 'maroon');
+  const [textColor, setTextColor] = useState(getTextColor(selectedColor));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // Update text color whenever background color changes
+  useEffect(() => {
+    setTextColor(getTextColor(selectedColor));
+  }, [selectedColor]);
 
   const handleColorChange = async (e) => {
     const newColor = e.target.value;
@@ -32,16 +38,19 @@ const ChangeColor = () => {
   };
 
   return (
-    <div className="color-picker" style={{ backgroundColor: selectedColor, color: getTextColor(selectedColor) }}>
-      <h2>Change Theme Color</h2>
+    <div className="color-picker" style={{ backgroundColor: selectedColor, color: textColor }}>
+      <h2 style={{color: textColor}}>Change Theme Color</h2>
       {error && <p className="error-message">{error}</p>}
       
       <select 
         value={selectedColor} 
         onChange={handleColorChange}
         disabled={loading}
+        style={{ color: textColor, backgroundColor: selectedColor }}
       >
         <option value="maroon">Maroon</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
         <option value="blue">Blue</option>
         <option value="green">Green</option>
         <option value="purple">Purple</option>

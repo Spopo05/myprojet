@@ -10,7 +10,7 @@ const Accueil = () => {
       <h1>Welcome to Our Application</h1>
       {user.id ? ( 
         <div>
-          <p className='p' style={{ color: user.couleur }}>Now you have become a Lion(ess). 
+          <p className='p'>Now you have become a Lion(ess). 
             <strong>{user.prenom} {user.nom} !</strong>
           </p>
           {user.avatar && (
