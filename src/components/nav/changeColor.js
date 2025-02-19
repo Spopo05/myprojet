@@ -12,7 +12,6 @@ const ChangeColor = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Update text color whenever background color changes
   useEffect(() => {
     setTextColor(getTextColor(selectedColor));
   }, [selectedColor]);

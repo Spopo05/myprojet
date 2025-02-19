@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditUser = () => {
-  const { id } = useParams(); // Get user ID from the URL
+  const { id } = useParams(); 
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -45,7 +45,7 @@ const EditUser = () => {
         `https://67719603ee76b92dd49017b3.mockapi.io/louriga2mehdi/users/${id}`,
         formData
       );
-      navigate("/admin"); // Redirect to admin page after editing
+      navigate("/admin"); 
     } catch (err) {
       setError("Failed to update user.");
     }

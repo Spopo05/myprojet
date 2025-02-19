@@ -12,7 +12,7 @@ const loadPersistedState = () => {
   }
 };
 
-// Create store function
+
 const configureStore = () => {
   return createStore(
     userReducer,
@@ -23,7 +23,7 @@ const configureStore = () => {
 
 const store = configureStore();
 
-// Persistence subscription
+
 store.subscribe(() => {
   const state = store.getState();
   try {

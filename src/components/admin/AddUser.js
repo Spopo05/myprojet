@@ -29,7 +29,7 @@ const AddUser = () => {
         "https://67719603ee76b92dd49017b3.mockapi.io/louriga2mehdi/users",
         formData
       );
-      navigate("/admin"); // Redirect to admin page after adding
+      navigate("/admin"); 
     } catch (err) {
       setError("Failed to add user.");
     }

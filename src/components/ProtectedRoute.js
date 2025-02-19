@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
-import { loginUser } from '../redux/actions'; // Import the action
+import { loginUser } from '../redux/actions'; 
 
 const ProtectedRoute = ({ adminOnly = false }) => {
-  const dispatch = useDispatch(); // Initialize dispatch
+  const dispatch = useDispatch(); 
   const user = useSelector((state) => state);
   
-  // Check localStorage first
+ 
   const persistedUser = JSON.parse(localStorage.getItem('user'));
   
   if (!persistedUser?.id) {
@@ -17,9 +17,9 @@ const ProtectedRoute = ({ adminOnly = false }) => {
     return <Navigate to="/Accuiel" replace />;
   }
 
-  // Sync Redux with localStorage
+
   if (!user.id) {
-    dispatch(loginUser(persistedUser)); // Use the imported action
+    dispatch(loginUser(persistedUser)); 
   }
 
   return <Outlet />;

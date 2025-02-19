@@ -12,7 +12,7 @@ const initialState = {
     email: "",
     photo: "",
     id: "",
-    users: [], // Add users array
+    users: [], 
   };
   
   const userReducer = (state = initialState, action) => {

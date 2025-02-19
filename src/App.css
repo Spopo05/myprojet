@@ -1,4 +1,4 @@
-/* General Styles */
+
 
 body {
   font-family: 'Times New Roman', Times, serif;
@@ -39,7 +39,7 @@ header button:hover {
   background-color: #cc0000;
 }
 
-/* Navigation Styles */
+/* Nav Styles */
 
 header nav a {
   color: rgb(0, 0, 0);
@@ -56,7 +56,7 @@ main{
 }
 
 /* Footer Styles */
-/* General footer styling */
+
 .footer {
   width: 100%;
   padding: 20px 10px; /* Reduced padding for a smaller footer */
@@ -72,34 +72,33 @@ main{
   align-items: center;
 }
 
-/* Footer content area with sections */
 .footer-content {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1000px; /* Smaller max-width */
-  margin-bottom: 10px; /* Reduced space */
+  max-width: 1000px; 
+  margin-bottom: 10px; 
 }
 
-/* Each section of the footer */
+
 .footer-left, .footer-center, .footer-right {
   flex: 1;
-  padding: 5px; /* Less padding */
+  padding: 5px; 
 }
 
 /* Titles for each section */
 .footer-left h3, .footer-center h3, .footer-right h3 {
-  font-size: 1.1rem; /* Smaller font size */
-  margin-bottom: 8px; /* Less space below the title */
+  font-size: 1.1rem;
+  margin-bottom: 8px; 
   font-weight: bold;
   color: inherit;
 }
 
-/* Paragraph styling inside footer sections */
+
 .footer-left p, .footer-center p, .footer-right p {
-  font-size: 0.9rem; /* Smaller font size */
+  font-size: 0.9rem; 
   color: inherit;
-  margin: 4px 0; /* Reduced spacing */
+  margin: 4px 0; 
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -277,7 +276,7 @@ main{
 }
 
 .password-toggle:hover {
-  color: #000; /* Adjust hover color as needed */
+  color: #000; 
 }
 .create-account-form h2 {
   margin-bottom: 20px;
@@ -285,8 +284,8 @@ main{
 
 .form-gridc {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 15px; /* Space between grid items */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px; 
 }
 
 .form-groupc {
@@ -320,13 +319,13 @@ main{
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px; /* Adjust font size for consistency */
+  font-size: 14px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btnc:hover {
   background-color: #4d0101;
-  transform: scale(1.05); /* Subtle scaling effect */
+  transform: scale(1.05); 
 }
 
 .btnc:focus {
@@ -505,6 +504,7 @@ main{
   background-color: #45a049;
 }
 
+
 .table-container {
   max-height: 400px;
   overflow-y: auto; 
@@ -518,13 +518,12 @@ main{
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Fix the table headers */
 .users-table1 th {
   position: sticky;
-  top: 0; /* Stick to the top of the scrollable container */
-  background: white; /* Match your page/container background */
-  z-index: 1; /* Ensure headers stay above table content */
-  box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1); /* Optional: Add shadow for separation */
+  top: 0; 
+  background: white; 
+  z-index: 1; 
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
 }
 .users-table1 th,
 .users-table1 td {
@@ -532,7 +531,7 @@ main{
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-/* For WebKit browsers (Chrome, Safari) */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -595,7 +594,7 @@ main{
   background-color: #d32f2f;
 }
 
-/* Modal Styles */
+
 .modal-overlay1 {
   position: fixed;
   top: 0;
@@ -680,7 +679,7 @@ main{
   opacity: 0.9;
 }
 
-/* Responsive Table */
+
 @media (max-width: 768px) {
   .users-table1 {
     display: block;
@@ -694,7 +693,7 @@ main{
   }
 }
 
-
+/* accueil.js */
 .accueil-container {
   max-width: 600px;
   margin: 20px auto;
@@ -746,6 +745,8 @@ main{
     height: 50px;
   }
 }
+
+/* changecolor.js */
 .color-picker {
   display: flex;
   flex-direction: column;

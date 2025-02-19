@@ -13,14 +13,14 @@ export const loginUser = (user) => ({
     type: 'UPDATE_COLOR',
     payload: color
   });
-  // In redux/actions.js
+ 
  export const updateColor = (color) => (dispatch, getState) => {
-  // Update local storage immediately
+  
         const currentState = getState();
         const updatedState = { ...currentState, couleur: color };
         localStorage.setItem('user', JSON.stringify(updatedState));
 
-  // Dispatch to Redux
+  
   dispatch({
     type: 'UPDATE_COLOR',
     payload: color
@@ -32,7 +32,7 @@ export const loginUser = (user) => ({
     payload: users,
   });
   
-// In src/redux/actions.js
+
 export const fetchUsers = () => async (dispatch) => {
   try {
     const response = await axios.get(
