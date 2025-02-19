@@ -70,23 +70,23 @@ const Layout = ({ children }) => {
         <div className="footer-right" style={{color: getTextColor(selectedColor)}}>
           <h3>Contact</h3>
           <p>📍 Address: 123 Main St</p>
-          <p>📞 Phone: (123) 456-7890</p>
+          <p>📞 Phone: (+212) 656-789080</p>
           <p>📧 Email: info@company.com</p>
         </div>
       </div>
 
       <div className="footer-social" style={{color: getTextColor(selectedColor)}}>
           <a href="https://facebook.com" className="social-link" aria-label="Facebook">
-            <i className="fab fa-facebook-f"></i> {/* Facebook icon */}
+            <i className="fab fa-facebook-f"></i> 
           </a>
           <a href="https://instagram.com" className="social-link" aria-label="Instagram">
-            <i className="fab fa-instagram"></i> {/* Instagram icon */}
+            <i className="fab fa-instagram"></i> 
           </a>
           <a href="https://twitter.com" className="social-link" aria-label="Twitter">
-            <i className="fab fa-twitter"></i> {/* Twitter icon */}
+            <i className="fab fa-twitter"></i> 
           </a>
           <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn">
-            <i className="fab fa-linkedin-in"></i> {/* LinkedIn icon */}
+            <i className="fab fa-linkedin-in"></i> 
           </a>
       </div>
     </footer>
