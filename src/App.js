@@ -13,7 +13,7 @@ import ChangeColor from './components/nav/changeColor';
 import Style   from "./App.css"
 const App = () => {
   return (
-    <Router basename="/myprojet">
+    <Router>
       <Routes>
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
