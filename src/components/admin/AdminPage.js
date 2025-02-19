@@ -78,8 +78,8 @@ const AdminPage = () => {
       <button className="add-user-btn1" onClick={() => setShowModal(true)}>
         Add New User
       </button>
-
-      <table className="users-table1">
+      <div class="table-container">
+      <table className="users-table1" id="users-table1">
         <thead>
           <tr>
             <th>Nom</th>
@@ -113,7 +113,7 @@ const AdminPage = () => {
               <td>
                 <img src={user.photo} alt="img" className="photo-img1" />
               </td>
-              <td>{user.admin ? "Yes" : "No"}</td>
+              <td>{user.admin ? "Oui" : "Non"}</td>
               <td>
                 <button className="edit-btn1" onClick={() => handleEdit(user)}>
                   Edit
@@ -129,6 +129,7 @@ const AdminPage = () => {
           ))}
         </tbody>
       </table>
+      </div>
 
       {showModal && (
         <div className="modal-overlay1">

@@ -8,7 +8,8 @@ import AdminPage from "./components/admin/AdminPage";
 import AddUser from "./components/admin/AddUser";
 import EditUser from "./components/admin/EditUser";
 import Accueil from "./components/nav/Accueil";
-import EditColorPage from './components/nav/changeColor';
+import profile from './components/nav/profile';
+import ChangeColor from './components/nav/changeColor';
 import Style   from "./App.css"
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
         <Route element={<Layout />}>
           {/* Admin-only routes */}
           <Route element={<ProtectedRoute adminOnly />}>
-          <Route path="/accueil" element={<Accueil />} />
+            {/* <Route path="/accueil" element={<Accueil />} /> */}
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/add-user" element={<AddUser />} />
             <Route path="/edit-user/:id" element={<EditUser />} />
@@ -30,7 +31,9 @@ const App = () => {
           
           {/* Regular authenticated routes */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/changeColor" element={<div>Change Color Page</div>} />
+            <Route path="/profile" element={<profile />} />
+            <Route path="/accueil" element={<Accueil />} />
+            <Route path="/ChangeColor" element={<ChangeColor/>} />
           </Route>
         </Route>
 

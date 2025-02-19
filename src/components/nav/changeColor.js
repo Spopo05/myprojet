@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { updateColour, loginUser } from '../../redux/actions';
+import { loginUser } from '../../redux/actions';
+import { getTextColor } from '../../utils/colorUtils'; 
 
 const ChangeColor = () => {
   const dispatch = useDispatch();
@@ -17,13 +18,10 @@ const ChangeColor = () => {
     setError('');
 
     try {
-      // Update backend
       const response = await axios.put(
         `https://67719603ee76b92dd49017b3.mockapi.io/louriga2mehdi/users/${user.id}`,
         { couleur: newColor }
       );
-
-      // Update Redux store with full user data from response
       dispatch(loginUser(response.data));
     } catch (err) {
       setError('Failed to save color preference. Please try again.');
@@ -34,7 +32,7 @@ const ChangeColor = () => {
   };
 
   return (
-    <div className="color-picker">
+    <div className="color-picker" style={{ backgroundColor: selectedColor, color: getTextColor(selectedColor) }}>
       <h2>Change Theme Color</h2>
       {error && <p className="error-message">{error}</p>}
       
@@ -48,6 +46,10 @@ const ChangeColor = () => {
         <option value="green">Green</option>
         <option value="purple">Purple</option>
         <option value="orange">Orange</option>
+        <option value="grey">Grey</option>
+        <option value="pink">Pink</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
       </select>
 
       {loading && <p className="loading-text">Saving preference...</p>}

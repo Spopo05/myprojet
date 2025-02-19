@@ -39,30 +39,55 @@ const Layout = ({ children }) => {
                 <Link to="/changeColor">Edit color</Link>
                 {user.admin && (<Link to="/admin">Admin Page</Link>)}
             </nav>
-        <button onClick={handleLogout} style={{ backgroundColor: user.couleur }}>Se Déconnecter</button>
+        <button className='deconn' onClick={handleLogout} style={{ backgroundColor: user.couleur }}>Se Déconnecter</button>
       </header>
       
       <main> 
             
             <Outlet /> 
       </main>
-      <footer style={{ backgroundColor: user.couleur }}>
-        <p>Address: 123 Main St</p>
-        <div>
-          <a href="https://facebook.com">Facebook</a>
-          <a href="https://instagram.com">Instagram</a>
+      <footer className="footer" style={{ backgroundColor: user.couleur }}>
+      <div className="footer-content">
+        <div className="footer-left">
+          <h3>Company</h3>
+          <p>About Us</p>
+          <p>Contact Us</p>
+          <p>Careers</p>
+          <p>Privacy Policy</p>
+          <p>Terms of Service</p>
         </div>
-        <select onChange={handleColorChange} value={footerColor}>
-          <option value="red">none</option>
-          <option value="maroon">Maroon</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="grey">grey</option>
-          <option value="pink">pink</option>
-          <option value="red">red</option>
-          <option value="yellow">Yellow</option>
-        </select>
-      </footer>
+
+        <div className="footer-center">
+          <h3>Quick Links</h3>
+          <p>Blog</p>
+          <p>FAQ</p>
+          <p>Support</p>
+          <p>Community</p>
+        </div>
+
+        <div className="footer-right">
+          <h3>Contact</h3>
+          <p>📍 Address: 123 Main St</p>
+          <p>📞 Phone: (123) 456-7890</p>
+          <p>📧 Email: info@company.com</p>
+        </div>
+      </div>
+
+      <div className="footer-social">
+          <a href="https://facebook.com" className="social-link" aria-label="Facebook">
+            <i className="fab fa-facebook-f"></i> {/* Facebook icon */}
+          </a>
+          <a href="https://instagram.com" className="social-link" aria-label="Instagram">
+            <i className="fab fa-instagram"></i> {/* Instagram icon */}
+          </a>
+          <a href="https://twitter.com" className="social-link" aria-label="Twitter">
+            <i className="fab fa-twitter"></i> {/* Twitter icon */}
+          </a>
+          <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn">
+            <i className="fab fa-linkedin-in"></i> {/* LinkedIn icon */}
+          </a>
+      </div>
+    </footer>
     </div>
   );
 };
