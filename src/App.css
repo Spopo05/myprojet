@@ -154,14 +154,15 @@ main{
 }
 
 .deconn{
+  width: 100px;
   color: #00000095;
   text-decoration: none;
   margin-left: 10px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
-  padding: 13px;
-  border-radius: 9px;
-  box-shadow: 2px 2px 5px 2px #0000006e;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 2px  4px 10px #00000048;
   transition: color 0.3s ease , transform 0.3s ease;
 }
 .deconn:hover{

@@ -41,7 +41,14 @@ const Layout = ({ children }) => {
                 <Link to="/changeColor">Edit color</Link>
                 {user.admin && (<Link to="/admin">Admin Page</Link>)}
             </nav>
-        <button className='deconn' onClick={handleLogout} style={{ backgroundColor: user.couleur , color: getTextColor(selectedColor)}}>Log Out</button>
+            <button 
+                className='deconn' 
+                onClick={handleLogout} 
+                style={{ backgroundColor: user.couleur, color: getTextColor(selectedColor) }}
+            >   
+                Log Out   <i className="fas fa-sign-out-alt"></i>
+            </button>
+
       </header>
       
       <main> 
