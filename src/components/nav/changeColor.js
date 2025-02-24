@@ -41,12 +41,18 @@ const ChangeColor = () => {
       <h2 style={{color: textColor}}>Change Theme Color</h2>
       {error && <p className="error-message">{error}</p>}
       
+      <input value={selectedColor} 
+      onChange={handleColorChange}
+      disabled={loading}
+      type="color"/>
+      
       <select 
         value={selectedColor} 
         onChange={handleColorChange}
         disabled={loading}
         style={{ color: textColor, backgroundColor: selectedColor }}
       >
+        <option value="none">Select</option>
         <option value="maroon">Maroon</option>
         <option value="white">White</option>
         <option value="black">Black</option>
