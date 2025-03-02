@@ -172,67 +172,98 @@ main{
 
 
 /* Login Page Styles */
+/* Mobile-first approach for the login container */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Use min-height to ensure it covers the full viewport */
   background-color: #f0f0f0;
+  padding: 20px; /* Add padding for better spacing on smaller screens */
 }
 
+/* Login form styling */
 .login-form {
   background-image: url(../src/assets/lionLOGIN.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover; /* Use cover to ensure the image fills the container */
+  background-position: center; /* Center the background image */
   background-color: rgba(110, 1, 1, 0.962);
-  padding: 65px;
+  padding: 40px 20px; /* Adjust padding for better spacing on mobile */
   border-radius: 8px;
   box-shadow: 2px 2px 15px 15px rgba(110, 109, 109, 0.716);
-  width: 330px;
+  width: 100%; /* Make the form responsive */
+  max-width: 330px; /* Set a max-width for larger screens */
   text-align: center;
 }
 
+/* Heading styling */
 .login-form h2 {
   color: #000000b0;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increase margin for better spacing */
   font-family: 'Old English Five', sans-serif;
-                                                
+  font-size: 24px; /* Adjust font size for better readability */
 }
 
+/* Input field styling */
 .login-form input {
-  width: 90%;
-  padding: 15px;
+  width: 100%; /* Full width for better responsiveness */
+  padding: 12px; /* Slightly reduce padding for smaller screens */
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px; /* Ensure text is readable on mobile */
 }
 
-
+/* Disabled button styling */
 .login-form button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+  opacity: 0.7; /* Add opacity for better visual feedback */
 }
 
+/* Error message styling */
 .login-form ul {
   color: rgb(248, 5, 5);
   list-style-type: none;
   padding: 0;
+  margin-bottom: 15px; /* Add margin for better spacing */
 }
+
+/* Paragraph styling */
 .login-form p {
   font-family: 'Old English Five', sans-serif;
   color: rgba(255, 63, 63, 0.873);
+  margin-bottom: 15px; /* Add margin for better spacing */
 }
 
+/* Link styling */
 .login-form a {
   color: #eceaead2;
   text-decoration: none;
+  font-size: 14px; /* Adjust font size for better readability */
 }
 
+/* Hover effect for links */
 .login-form a:hover {
   font-weight: 750;
   color: #4d0101;
 }
 
+/* Media query for larger screens (optional) */
+@media (min-width: 768px) {
+  .login-form {
+    padding: 65px; /* Increase padding for larger screens */
+  }
+
+  .login-form h2 {
+    font-size: 28px; /* Increase font size for larger screens */
+  }
+
+  .login-form input {
+    padding: 15px; /* Increase padding for larger screens */
+  }
+}
 .create-account-container {
   display: flex;
   justify-content: center;
