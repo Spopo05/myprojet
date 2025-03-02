@@ -177,7 +177,7 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Use min-height to ensure it covers the full viewport */
+  min-height: 100vh; /* Ensure the container covers the full viewport height */
   background-color: #f0f0f0;
   padding: 20px; /* Add padding for better spacing on smaller screens */
 }
@@ -186,13 +186,13 @@ main{
 .login-form {
   background-image: url(../src/assets/lionLOGIN.png);
   background-repeat: no-repeat;
-  background-size: cover; /* Use cover to ensure the image fills the container */
+  background-size: cover; /* Ensure the background image covers the form */
   background-position: center; /* Center the background image */
   background-color: rgba(110, 1, 1, 0.962);
-  padding: 40px 20px; /* Adjust padding for better spacing on mobile */
+  padding: 30px 20px; /* Reduced padding to make the form less tall */
   border-radius: 8px;
   box-shadow: 2px 2px 15px 15px rgba(110, 109, 109, 0.716);
-  width: 100%; /* Make the form responsive */
+  width: 100%; /* Full width for responsiveness */
   max-width: 330px; /* Set a max-width for larger screens */
   text-align: center;
 }
@@ -200,19 +200,27 @@ main{
 /* Heading styling */
 .login-form h2 {
   color: #000000b0;
-  margin-bottom: 20px; /* Increase margin for better spacing */
+  margin-bottom: 15px; /* Reduced margin to save space */
   font-family: 'Old English Five', sans-serif;
-  font-size: 24px; /* Adjust font size for better readability */
+  font-size: 22px; /* Slightly smaller font size */
 }
 
 /* Input field styling */
 .login-form input {
-  width: 100%; /* Full width for better responsiveness */
-  padding: 12px; /* Slightly reduce padding for smaller screens */
-  margin-bottom: 15px;
+  width: 80%; /* Full width for responsiveness */
+  padding: 10px; /* Reduced padding to make inputs shorter */
+  margin-bottom: 10px; /* Reduced margin to save space */
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px; /* Ensure text is readable on mobile */
+  font-size: 14px; /* Smaller font size for compactness */
+}
+
+/* Button styling */
+.login-form button {
+  width: 100%; /* Full width for responsiveness */
+  padding: 10px; /* Reduced padding to make the button shorter */
+  margin-bottom: 10px; /* Reduced margin to save space */
+  font-size: 16px; /* Adjust font size for better readability */
 }
 
 /* Disabled button styling */
@@ -227,21 +235,22 @@ main{
   color: rgb(248, 5, 5);
   list-style-type: none;
   padding: 0;
-  margin-bottom: 15px; /* Add margin for better spacing */
+  margin-bottom: 10px; /* Reduced margin to save space */
 }
 
 /* Paragraph styling */
 .login-form p {
   font-family: 'Old English Five', sans-serif;
   color: rgba(255, 63, 63, 0.873);
-  margin-bottom: 15px; /* Add margin for better spacing */
+  margin-bottom: 10px; /* Reduced margin to save space */
+  font-size: 14px; /* Smaller font size for compactness */
 }
 
 /* Link styling */
 .login-form a {
   color: #eceaead2;
   text-decoration: none;
-  font-size: 14px; /* Adjust font size for better readability */
+  font-size: 14px; /* Smaller font size for compactness */
 }
 
 /* Hover effect for links */
@@ -249,21 +258,34 @@ main{
   font-weight: 750;
   color: #4d0101;
 }
+.passwordToggle{
+  position: absolute;
+  left: 100px; 
+  top: 45%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7e0606; 
+  padding: 0;
+ 
+}
 
 /* Media query for larger screens (optional) */
 @media (min-width: 768px) {
   .login-form {
-    padding: 65px; /* Increase padding for larger screens */
+    padding: 40px 30px; /* Slightly more padding for larger screens */
   }
 
   .login-form h2 {
-    font-size: 28px; /* Increase font size for larger screens */
+    font-size: 24px; /* Slightly larger font size for larger screens */
   }
 
   .login-form input {
-    padding: 15px; /* Increase padding for larger screens */
+    padding: 12px; /* Slightly more padding for larger screens */
   }
 }
+
 .create-account-container {
   display: flex;
   justify-content: center;
@@ -289,7 +311,7 @@ main{
 }
 
 .password-container input {
-  width: 90%;
+  width: 80%;
 }
 
 .password-toggle {
