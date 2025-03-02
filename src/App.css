@@ -207,8 +207,8 @@ main{
 
 /* Input field styling */
 .login-form input {
-  width: 80%; /* Full width for responsiveness */
-  padding: 10px; /* Reduced padding to make inputs shorter */
+  width: 90%; /* Full width for responsiveness */
+  padding: 8px; /* Reduced padding to make inputs shorter */
   margin-bottom: 10px; /* Reduced margin to save space */
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -286,43 +286,54 @@ main{
   }
 }
 
+/* Mobile-first approach for the create account container */
 .create-account-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Ensure the container covers the full viewport height */
   background-color: #f0f0f0;
+  padding: 10px; /* Reduced padding for better spacing on smaller screens */
 }
 
+/* Create account form styling */
 .create-account-form {
   background-image: url(../src/assets/lionLOGIN.png);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-color: rgba(110, 1, 1, 0.962);;
-  padding: 20px;
+  background-size: cover; /* Ensure the background image covers the form */
+  background-position: center; /* Center the background image */
+  background-color: rgba(110, 1, 1, 0.962);
+  padding: 20px 15px; /* Reduced padding to make the form less tall */
   border-radius: 8px;
   box-shadow: 2px 2px 15px 15px rgba(110, 109, 109, 0.716);
-  width: 500px; /* Adjust width as needed */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 400px; /* Set a max-width for larger screens */
   text-align: center;
 }
+
+/* Password container styling */
 .password-container {
   position: relative;
   width: 100%; /* Ensure it takes the full width of its container */
 }
 
 .password-container input {
-  width: 80%;
+  width: 90%; /* Full width for responsiveness */
+  padding: 8px; /* Reduced padding to make inputs shorter */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px; /* Smaller font size for compactness */
 }
 
 .password-toggle {
   position: absolute;
-  right: 15px; 
-  top: 45%;
+  right: 10px; /* Adjust position for better alignment */
+  top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
-  color: #7e0606; 
+  color: #7e0606;
   padding: 0;
   display: flex;
   align-items: center;
@@ -330,18 +341,23 @@ main{
 }
 
 .password-toggle:hover {
-  color: #000; 
-}
-.create-account-form h2 {
-  margin-bottom: 20px;
+  color: #000;
 }
 
+/* Heading styling */
+.create-account-form h2 {
+  margin-bottom: 10px; /* Reduced margin to save space */
+  font-size: 22px; /* Smaller font size for compactness */
+}
+
+/* Form grid styling */
 .form-gridc {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 15px; 
+  grid-template-columns: 1fr; /* Single column for mobile screens */
+  gap: 8px; /* Reduced gap for a more compact form */
 }
 
+/* Form group styling */
 .form-groupc {
   display: flex;
   flex-direction: column;
@@ -349,42 +365,62 @@ main{
 }
 
 .form-groupc label {
-  margin-bottom: 5px;
+  margin-bottom: 3px; /* Reduced margin to save space */
   font-weight: bold;
+  font-size: 14px; /* Smaller font size for compactness */
 }
 
 .form-groupc input {
-  padding: 10px;
+  padding: 8px; /* Reduced padding to make inputs shorter */
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 14px; /* Smaller font size for compactness */
 }
 
 .form-groupc input[type="checkbox"] {
   width: auto;
-  margin-right: 10px;
+  margin-right: 5px; /* Reduced margin to save space */
 }
 
+/* Button styling */
 .btnc {
-  width: 200px;
-  margin-top: 25px;
-  padding:  15px;
+  width: 100%; /* Full width for responsiveness */
+  margin-top: 10px; /* Reduced margin to save space */
+  padding: 10px; /* Reduced padding to make the button shorter */
   background-color: #111111cf;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 14px; /* Smaller font size for compactness */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btnc:hover {
   background-color: #4d0101;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .btnc:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(1, 16, 32, 0.5);
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .create-account-form {
+    padding: 25px 20px; /* Slightly more padding for larger screens */
+  }
+
+  .form-gridc {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    gap: 10px; /* Increased gap for better spacing */
+  }
+
+  .btnc {
+    width: auto; /* Auto width for larger screens */
+    padding: 12px 25px; /* Adjust padding for larger screens */
+  }
 }
 
 /* Form Section Styles */
